@@ -4973,7 +4973,7 @@ int processCommand(client *c, int callFlags) {
 
     /* Don't accept write commands if there are not enough good slaves and
     * user configured the min-slaves-to-write option. */
-    if (listLength(g_pserver->masters) == 0 &&
+    if (/* listLength(g_pserver->masters) == 0 && */
         g_pserver->repl_min_slaves_to_write &&
         g_pserver->repl_min_slaves_max_lag &&
         is_write_command &&
